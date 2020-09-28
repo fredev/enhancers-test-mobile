@@ -20,6 +20,10 @@
 		4B5EA8C0A9DA1E1C457A9A0C /* libPods-MyWeather-MyWeatherTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F233B89135ED5532125559B /* libPods-MyWeather-MyWeatherTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		94746FDF0D69EB93A06BECD5 /* libPods-MyWeather-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F873CAC2639C8DF2E2BBF6 /* libPods-MyWeather-tvOS.a */; };
+		D2DE5FC0472B4C45A95A2FD9 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7DC9E9D18D874160994BAD90 /* Poppins-Bold.ttf */; };
+		97600735F7F8443BA768AC38 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B15708B0768E4B7191A7669B /* Poppins-Light.ttf */; };
+		340E39A149304321912661A9 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6DD071C3F2F42D8B700CCC9 /* Poppins-Medium.ttf */; };
+		6D910A1D7584444D80BDA35B /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DC2EAB5665746678538963D /* Poppins-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +71,10 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		FEC18291C1E8FFDAEC3C9EA4 /* Pods-MyWeather-MyWeatherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyWeather-MyWeatherTests.release.xcconfig"; path = "Target Support Files/Pods-MyWeather-MyWeatherTests/Pods-MyWeather-MyWeatherTests.release.xcconfig"; sourceTree = "<group>"; };
+		7DC9E9D18D874160994BAD90 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; name = "Poppins-Bold.ttf"; path = "../assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B15708B0768E4B7191A7669B /* Poppins-Light.ttf */ = {isa = PBXFileReference; name = "Poppins-Light.ttf"; path = "../assets/fonts/Poppins-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A6DD071C3F2F42D8B700CCC9 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; name = "Poppins-Medium.ttf"; path = "../assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5DC2EAB5665746678538963D /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; name = "Poppins-SemiBold.ttf"; path = "../assets/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +173,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				D1A1C580F4883EC7BD79EDDD /* Pods */,
+				723AA19D2D5C41D884A3EE47 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -197,6 +206,18 @@
 			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		723AA19D2D5C41D884A3EE47 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				7DC9E9D18D874160994BAD90 /* Poppins-Bold.ttf */,
+				B15708B0768E4B7191A7669B /* Poppins-Light.ttf */,
+				A6DD071C3F2F42D8B700CCC9 /* Poppins-Medium.ttf */,
+				5DC2EAB5665746678538963D /* Poppins-SemiBold.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -342,6 +363,10 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				D2DE5FC0472B4C45A95A2FD9 /* Poppins-Bold.ttf in Resources */,
+				97600735F7F8443BA768AC38 /* Poppins-Light.ttf in Resources */,
+				340E39A149304321912661A9 /* Poppins-Medium.ttf in Resources */,
+				6D910A1D7584444D80BDA35B /* Poppins-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
