@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, Text, View} from 'react-native';
+import {FlatList, ScrollView, Text, View} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {useNavigation} from '@react-navigation/native';
 import styled from 'styled-components';
@@ -37,27 +37,30 @@ const HomeScreen: React.FC = () => {
   };
 
   return (
-    <Container>
-      <Title>Good morning!</Title>
-      <Title>Mario</Title>
-      <AddCityView>
-        <AddCityButton />
-      </AddCityView>
+    <ScrollView>
+      <Container>
+        <Title>Good morning!</Title>
+        <Title>Mario</Title>
+        <AddCityView>
+          <AddCityButton />
+        </AddCityView>
 
-      <FlatListView>
-        <FlatList
-          data={cities}
-          keyExtractor={(item, index) => index.toString()}
-          renderItem={({item, index}) => (
-            <WeatherListItem
-              item={item}
-              key={index}
-              onPress={onCityPress(index)}
-            />
-          )}
-        />
-      </FlatListView>
-    </Container>
+        <FlatListView>
+          <FlatList
+            data={cities}
+            keyExtractor={(item, index) => index.toString()}
+            renderItem={({item, index}) => (
+              <WeatherListItem
+                item={item}
+                key={index}
+                onPress={onCityPress(index)}
+              />
+            )}
+          />
+        </FlatListView>
+        <View style={{height: 120}} />
+      </Container>
+    </ScrollView>
   );
 };
 
