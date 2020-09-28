@@ -19,14 +19,15 @@ interface FlatListItemProps {
   isLast: boolean;
 }
 
-const FlatListItem = styled(DropShadow)<FlatListItemProps>`
+const FlatListItem = styled(View)<FlatListItemProps>`
   width: 148px;
   align-items: center;
   margin: 0 ${(props) => props.isLast ? '16px' : '8px'} 0 ${(props) => props.isFirst ? '16px' : '8px'};
   padding-top: 16px;
   padding-bottom: 24px;
   background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
+  border-radius: 25px;
+  overflow: hidden;
 `;
 
 const DayText = styled(Text)`
@@ -69,22 +70,24 @@ const WeatherDaily: React.FC = () => {
             <FlatListItem
               isFirst={isFirst}
               isLast={isLast}
-              style={{
-                shadowColor: 'rgba(0, 0, 0, 0.17)',
-                shadowOffset: {
-                  width: 5,
-                  height: 10,
-                },
-                shadowOpacity: 0.5,
-                shadowRadius: 5,
-              }}
               key={item.id}
             >
-              <DayText>
-                {formatDate(fromUnixTime(item.datetime), 'eeee')}
-              </DayText>
-              <TemperatureText>{item.temp}°</TemperatureText>
-              <WeatherIcon id={item.id} />
+              <DropShadow
+                style={{
+                  shadowColor: 'rgba(0, 0, 0, 0.17)',
+                  shadowOffset: {
+                    width: 5,
+                    height: 5,
+                  },
+                  shadowOpacity: 0.2,
+                  shadowRadius: 5,
+                }}>
+                <DayText>
+                  {formatDate(fromUnixTime(item.datetime), 'eeee')}
+                </DayText>
+                <TemperatureText>{item.temp}°</TemperatureText>
+                <WeatherIcon id={item.id} />
+              </DropShadow>
             </FlatListItem>
           );
         }}
