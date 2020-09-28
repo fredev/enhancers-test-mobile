@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text} from 'react-native';
-import CenteredContainer from '../../components/container/CenteredContainer';
+import CenteredContainer from '../components/CenteredContainer';
 
 const LocationScreen: React.FC = () => {
   return (

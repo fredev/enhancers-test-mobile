@@ -78,7 +78,7 @@ const initialState: CitiesInitialState = {
   cities: [
     {
       id: 1,
-      name: 'London',
+      name: 'Naples',
       weather: {
         now: {
           id: 1,
@@ -88,9 +88,9 @@ const initialState: CitiesInitialState = {
         hourly,
         daily: [
           {id: 1, temp: 18, datetime: 1601312400},
-          {id: 3, temp: 18, datetime: 1601398800},
-          {id: 2, temp: 18, datetime: 1601485200},
-          {id: 3, temp: 18, datetime: 1601571600},
+          {id: 4, temp: 18, datetime: 1601398800},
+          {id: 3, temp: 18, datetime: 1601485200},
+          {id: 2, temp: 18, datetime: 1601571600},
           {id: 1, temp: 18, datetime: 1601658000},
           {id: 3, temp: 18, datetime: 1601744400},
           {id: 2, temp: 18, datetime: 1601830800},
@@ -105,7 +105,7 @@ const initialState: CitiesInitialState = {
         now: {
           id: 2,
           temp: 22,
-          datetime: 1601375490,
+          datetime: 1601265399,
         },
         hourly,
         daily: [
@@ -127,7 +127,7 @@ const initialState: CitiesInitialState = {
         now: {
           id: 3,
           temp: 20,
-          datetime: 1601265982,
+          datetime: 1601265399,
         },
         hourly,
         daily: [
