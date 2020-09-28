@@ -302,11 +302,15 @@ PODS:
     - React-jsi (= 0.63.2)
   - RNCMaskedView (0.1.10):
     - React
+  - RNDeviceInfo (6.0.4):
+    - React-Core
   - RNGestureHandler (1.8.0):
     - React
   - RNReanimated (1.13.1):
     - React
   - RNScreens (2.11.0):
+    - React
+  - SRSRadialGradient (1.0.0):
     - React
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
@@ -362,9 +366,11 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
+  - RNDeviceInfo (from `../node_modules/react-native-device-info`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
+  - SRSRadialGradient (from `../node_modules/react-native-radial-gradient/ios`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -439,12 +445,16 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   RNCMaskedView:
     :path: "../node_modules/@react-native-community/masked-view"
+  RNDeviceInfo:
+    :path: "../node_modules/react-native-device-info"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
   RNReanimated:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
     :path: "../node_modules/react-native-screens"
+  SRSRadialGradient:
+    :path: "../node_modules/react-native-radial-gradient/ios"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -488,12 +498,14 @@ SPEC CHECKSUMS:
   React-RCTVibration: 4d2e726957f4087449739b595f107c0d4b6c2d2d
   ReactCommon: a0a1edbebcac5e91338371b72ffc66aa822792ce
   RNCMaskedView: f5c7d14d6847b7b44853f7acb6284c1da30a3459
+  RNDeviceInfo: 6d3fae29bb57a18fabac7d09d49aca0be0d78977
   RNGestureHandler: 7a5833d0f788dbd107fbb913e09aa0c1ff333c39
   RNReanimated: dd8c286ab5dd4ba36d3a7fef8bff7e08711b5476
   RNScreens: 0e91da98ab26d5d04c7b59a9b6bd694124caf88c
+  SRSRadialGradient: c8ab040309de2b2c1fc3f5c4804f2436c2df1f1a
   Yoga: 7740b94929bbacbddda59bf115b5317e9a161598
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: b1919344e48a9c0d1ea30f0401ee7e8c929724c6
+PODFILE CHECKSUM: 15fafd24ac5a4fb3748eabb1093b3c3c0784795d
 
 COCOAPODS: 1.9.3
