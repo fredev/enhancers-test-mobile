@@ -5,6 +5,7 @@ import fromUnixTime from "date-fns/fromUnixTime";
 import styled from "styled-components";
 import {useSelector} from "react-redux";
 import {RootState} from "../../store/rootReducer";
+import LinearGradient from "react-native-linear-gradient";
 
 
 const FlatListDailyView = styled(View)`
@@ -36,12 +37,23 @@ const TempText = styled(Text)<TextProps>`
   color: ${(props) => props.theme.colors.secondary};
 `;
 
+const StyledLinearGradient = styled(LinearGradient)`
+  position: relative;
+  left: 10%;
+  top: -73px;
+  width: 100%;
+  padding: 3px;
+  z-index: 1;
+`;
+
 const WeatherHourly: React.FC = () => {
   const {weather} = useSelector(
     (state: RootState) => state.weather.cities[state.weather.selected],
   );
 
   const [firstIndex, setFirstIndex] = useState(0);
+
+  // @ts-ignore
   const onViewRef = React.useRef((viewableItems) => {
     if (viewableItems.viewableItems && viewableItems.viewableItems.length > 0) {
       setFirstIndex(viewableItems.viewableItems[0].index);
@@ -51,51 +63,62 @@ const WeatherHourly: React.FC = () => {
   const viewConfigRef = React.useRef({itemVisiblePercentThreshold: 25});
 
   return (
-    <FlatListDailyView>
-      <FlatList
-        contentContainerStyle={{paddingRight: 300}}
-        horizontal
-        data={weather.hourly}
-        keyExtractor={(item, index) => index.toString()}
-        onViewableItemsChanged={onViewRef.current}
-        viewabilityConfig={viewConfigRef.current}
-        renderItem={({item, index}) => {
-          const isFirst = index === 0;
-          const isLast = index === weather.daily.length - 1;
+    <>
+      <FlatListDailyView>
+        <FlatList
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{paddingRight: 330}}
+          horizontal
+          data={weather.hourly}
+          keyExtractor={(item, index) => index.toString()}
+          onViewableItemsChanged={onViewRef.current}
+          viewabilityConfig={viewConfigRef.current}
+          renderItem={({item, index}) => {
+            const isFirst = index === 0;
+            const isLast = index === weather.daily.length - 1;
 
-          let time =
-            index > 0
-              ? formatDate(fromUnixTime(item.datetime), 'h aaaa')
-              : 'NOW';
+            let time =
+              index > 0
+                ? formatDate(fromUnixTime(item.datetime), 'h aaaa')
+                : 'NOW';
 
-          return (
-            <View
-              style={{
-                justifyContent: 'center',
-                alignItems: 'center',
-                backgroundColor: 'transparent',
-                borderRadius: 20,
-                width: 70,
-                marginLeft: isFirst ? 16 : 8,
-                marginRight: isLast ? 16 : 8,
-              }}
-              key={item.id}>
-              <TimeText first={index === firstIndex}>{time}</TimeText>
+            return (
               <View
                 style={{
-                  display: 'flex',
                   justifyContent: 'center',
-                  borderWidth: index === firstIndex ? 12 : 8,
-                  borderRadius: 100,
-                  borderColor: 'white',
+                  alignItems: 'center',
+                  backgroundColor: 'transparent',
+                  borderRadius: 20,
+                  width: 70,
+                  marginLeft: isFirst ? 16 : 8,
+                  marginRight: isLast ? 16 : 8,
                 }}
-              />
-              <TempText first={index === firstIndex}>{item.temp}°</TempText>
-            </View>
-          );
-        }}
+                key={item.id}>
+                <TimeText first={index === firstIndex}>{time}</TimeText>
+                <View
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    borderWidth: index === firstIndex ? 12 : 8,
+                    borderRadius: 100,
+                    borderColor: 'white',
+                  }}
+                />
+                <TempText first={index === firstIndex}>{item.temp}°</TempText>
+              </View>
+            );
+          }}
+        />
+
+
+      </FlatListDailyView>
+      <StyledLinearGradient
+        start={{x: 0, y: 0}}
+        end={{x: 1, y: 0}}
+        locations={[0, 1]}
+        colors={['#ffffffff', '#ffffff0f']}
       />
-    </FlatListDailyView>
+    </>
   )
 }
 

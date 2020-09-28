@@ -68,15 +68,6 @@ const WeatherTemperature = styled(Text)`
   color: ${(props) => props.theme.colors.secondary};
 `;
 
-const StyledLinearGradient = styled(LinearGradient)`
-  position: relative;
-  left: 10%;
-  top: -73px;
-  width: 100%;
-  padding: 3px;
-  z-index: 1;
-`;
-
 const WeatherScreen: React.FC = () => {
   const navigation = useNavigation();
 
@@ -145,13 +136,6 @@ const WeatherScreen: React.FC = () => {
       </WeatherNow>
 
       <WeatherHourly />
-
-      <StyledLinearGradient
-        start={{x: 0, y: 0}}
-        end={{x: 1, y: 0}}
-        locations={[0, 1]}
-        colors={['#ffffffff', '#ffffff0f']}
-      />
 
       <WeatherDaily />
     </WeatherRadialGradient>

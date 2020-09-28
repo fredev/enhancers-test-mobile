@@ -14,6 +14,21 @@ const FlatListHourlyView = styled(View)`
   margin-bottom: 20px;
 `;
 
+interface FlatListItemProps {
+  isFirst: boolean;
+  isLast: boolean;
+}
+
+const FlatListItem = styled(DropShadow)<FlatListItemProps>`
+  width: 148px;
+  align-items: center;
+  margin: 0 ${(props) => props.isLast ? '16px' : '8px'} 0 ${(props) => props.isFirst ? '16px' : '8px'};
+  padding-top: 16px;
+  padding-bottom: 24px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+`;
+
 const DayText = styled(Text)`
   font-family: 'Poppins-SemiBold';
   font-size: 22px;
@@ -44,23 +59,17 @@ const WeatherDaily: React.FC = () => {
       <FlatList
         horizontal
         data={weather.daily}
+        showsHorizontalScrollIndicator={false}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({item, index}) => {
           const isFirst = index === 0;
           const isLast = index === weather.daily.length - 1;
 
           return (
-            <DropShadow
+            <FlatListItem
+              isFirst={isFirst}
+              isLast={isLast}
               style={{
-                alignItems: 'center',
-                margin: 8,
-                paddingTop: 16,
-                paddingBottom: 24,
-                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                borderRadius: 20,
-                width: 148,
-                marginLeft: isFirst ? 16 : 8,
-                marginRight: isLast ? 16 : 8,
                 shadowColor: 'rgba(0, 0, 0, 0.17)',
                 shadowOffset: {
                   width: 5,
@@ -76,7 +85,7 @@ const WeatherDaily: React.FC = () => {
               </DayText>
               <TemperatureText>{item.temp}°</TemperatureText>
               <WeatherIcon id={item.id} />
-            </DropShadow>
+            </FlatListItem>
           );
         }}
       />
