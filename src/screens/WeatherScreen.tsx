@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {ScrollView, Text, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import DeviceInfo from 'react-native-device-info';
 // @ts-ignore
@@ -128,16 +128,19 @@ const WeatherScreen: React.FC = () => {
         center={<HeaderTitle>{name}</HeaderTitle>}
         right={<IconButton icon={<Plus />} onPress={onPlusPress} />}
       />
-      <DatetimeText>{getDatetime()}</DatetimeText>
-      <WeatherNameText>{getWeatherName()}</WeatherNameText>
-      <WeatherNow>
-        <WeatherIcon id={weather.daily[0].id} />
-        <WeatherTemperature>{weather.daily[0].temp}°</WeatherTemperature>
-      </WeatherNow>
+      <ScrollView>
+        <DatetimeText>{getDatetime()}</DatetimeText>
+        <WeatherNameText>{getWeatherName()}</WeatherNameText>
+        <WeatherNow>
+          <WeatherIcon id={weather.daily[0].id} />
+          <WeatherTemperature>{weather.daily[0].temp}°</WeatherTemperature>
+        </WeatherNow>
 
-      <WeatherHourly />
+        <WeatherHourly />
 
-      <WeatherDaily />
+        <WeatherDaily />
+        <View style={{height: 120}} />
+      </ScrollView>
     </WeatherRadialGradient>
   );
 };
